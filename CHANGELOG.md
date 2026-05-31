@@ -4,8 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- **wp-acf-and-content-modeling** skill with parallel Claude and Codex wrappers, reference docs, and slash commands (`/wp-acf-review`, `/wp-acf`)
+
 ### Changed
 
+- Updated the README skills table, command list, quick examples, and repo badges to include the new ACF/content-modeling domain
+- Added ACF/content-modeling guidance to the main repository overview so the pack description matches the new coverage area
 - Added planned roadmap entries for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review` to the README skills table with in-progress status markers
 - Clarified README skill status labels so shipped and in-progress skill entries are easier to distinguish
 - Added initial Claude and Codex skill scaffolds for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review`, plus shared reference docs and six new slash commands
