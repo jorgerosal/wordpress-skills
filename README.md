@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/Focus-Code%20review%20and%20triage-8250df?style=for-the-badge" alt="Code review and triage" />
 </p>
 
-Professional WordPress skills for [Claude Code](https://claude.ai/code) and Codex, built for code review, fast triage, and modern WordPress development workflows across performance, security, plugins, blocks, themes, WooCommerce, REST APIs, admin UI, migrations, accessibility, testing, WP-CLI operations, Playground, and PHPStan.
+Professional WordPress skills for [Claude Code](https://claude.ai/code) and Codex, built for AI-assisted WordPress code review, fast triage, and modern WordPress development workflows across plugin architecture, security audits, performance reviews, blocks, themes, WooCommerce, REST APIs, admin UI, migrations, accessibility, testing, WP-CLI operations, Playground, WPGraphQL, and PHPStan.
 
 ## Why This Pack
 
@@ -46,6 +46,15 @@ Run the repository validator before opening a PR or after adding skills, command
 ```bash
 python3 scripts/validate_repo.py
 ```
+
+## Guides and FAQ
+
+The GitHub Pages site is also used as a search-friendly docs surface for developers looking for specific WordPress + AI workflows:
+
+- [How to review a WordPress plugin with Claude Code](https://jorgerosal.github.io/wordpress-skills/guides/review-wordpress-plugin-with-claude-code.html)
+- [WordPress AI code review FAQ](https://jorgerosal.github.io/wordpress-skills/guides/wordpress-ai-code-review-faq.html)
+
+These pages are meant to help both human readers and AI search systems understand what the pack is for, which workflows it supports, and which commands to start with.
 
 ## Available Skills
 
@@ -236,7 +245,21 @@ Claude skills include a full review command and a faster triage command.
 /wp-phpstan-review .
 ```
 
-When installed from the marketplace, commands are namespaced:
+### Example Output Shape
+
+```text
+Critical — Missing capability check before plugin settings save
+- File: includes/admin/class-settings-page.php:88
+- Why it matters: authenticated low-privilege users may be able to change plugin behavior
+- Fix: gate the handler with current_user_can(...) before processing input
+
+Warning — Expensive meta query inside frontend request loop
+- File: includes/class-catalog.php:214
+- Why it matters: high-cardinality postmeta lookups can slow archive and search requests
+- Fix: reduce per-request queries, cache IDs, or redesign the data model
+```
+
+When installed as a Claude Code plugin or from the marketplace, commands are namespaced:
 
 ```bash
 /wordpress-skills:wp-perf-review [path]
@@ -284,7 +307,7 @@ Claude or Codex will match the request to the most relevant skill and follow tha
 
 ## What Each Skill Covers
 
-All eleven skills produce structured findings with severity labels (`Critical`, `Warning`, `Info`), file references, and concrete recommendations.
+All shipped and in-progress skills are designed to produce structured findings with severity labels (`Critical`, `Warning`, `Info`), file references, and concrete recommendations.
 
 ### `wp-performance-review`
 

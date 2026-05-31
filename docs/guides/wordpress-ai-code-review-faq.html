@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WordPress AI Code Review FAQ | WordPress Skills</title>
+  <meta name="description" content="Frequently asked questions about using Claude Code and Codex for WordPress code review, plugin audits, WooCommerce reviews, WPGraphQL checks, and installation of the WordPress Skills pack." />
+  <link rel="canonical" href="https://jorgerosal.github.io/wordpress-skills/guides/wordpress-ai-code-review-faq.html" />
+  <meta property="og:title" content="WordPress AI Code Review FAQ" />
+  <meta property="og:description" content="Answers to common questions about AI-assisted WordPress code review with Claude Code, Codex, and the WordPress Skills pack." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jorgerosal.github.io/wordpress-skills/guides/wordpress-ai-code-review-faq.html" />
+  <meta property="og:image" content="https://jorgerosal.github.io/wordpress-skills/assets/hero-wordpress-skills.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are WordPress skills for Claude Code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They are reusable review workflows and slash commands tailored for WordPress development tasks like plugin review, WooCommerce audits, REST API checks, accessibility review, WP-CLI operations, and release engineering."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Claude Code review a WordPress plugin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. With the WordPress Skills pack installed, Claude Code can run focused plugin reviews for structure, security, performance, migrations, WooCommerce compatibility, and admin UI issues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do the commands work with plugin installs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When installed as a Claude Code plugin, commands are namespaced like /wordpress-skills:wp-plugin-review or /wordpress-skills:wp-sec-review."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" aria-label="WordPress Skills home">
+        <span class="brand-mark"><span>W</span></span>
+        <span class="brand-copy"><strong>WordPress Skills</strong><span>for Claude and Codex</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#installation">Install</a>
+        <a href="./review-wordpress-plugin-with-claude-code.html">Plugin Review Guide</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="band">
+      <div class="shell" style="max-width: 860px;">
+        <p class="eyebrow">FAQ</p>
+        <h1>WordPress AI code review FAQ</h1>
+        <p>
+          This page answers common questions developers ask when they want to use
+          <strong>Claude Code</strong> or <strong>Codex</strong> for WordPress plugin reviews,
+          WooCommerce audits, REST API checks, or broader WordPress engineering reviews.
+        </p>
+
+        <h2>What are WordPress skills for Claude Code?</h2>
+        <p>
+          They are structured review workflows packaged as Claude Code plugin skills and commands.
+          Instead of treating every repository like generic PHP, they review using WordPress-specific
+          concerns such as hooks, nonces, capability checks, block.json, theme.json, HPOS,
+          Settings API, REST permissions, migrations, and WordPress.org release concerns.
+        </p>
+
+        <h2>Can Claude Code review a WordPress plugin?</h2>
+        <p>
+          Yes. The pack includes both a broad plugin review command and narrower domain reviews for
+          security, performance, WooCommerce, REST API design, accessibility, migration safety,
+          admin UI, and testing strategy.
+        </p>
+        <pre><code>/wordpress-skills:wp-plugin-review wp-content/plugins/my-plugin
+/wordpress-skills:wp-sec-review wp-content/plugins/my-plugin
+/wordpress-skills:wp-perf-review wp-content/plugins/my-plugin</code></pre>
+
+        <h2>Can this help with WooCommerce code review?</h2>
+        <p>
+          Yes. There is a WooCommerce-specific skill for HPOS compatibility, gateways, CRUD usage,
+          template overrides, cart fragments, Action Scheduler, and extension architecture.
+        </p>
+
+        <h2>Does it work for WPGraphQL or headless WordPress?</h2>
+        <p>
+          Yes. The project now includes a headless and WPGraphQL review skill focused on schema
+          design, resolver safety, preview flows, caching, and build invalidation.
+        </p>
+
+        <h2>Do I have to memorize slash commands?</h2>
+        <p>
+          No. You can ask in natural language, like “review this plugin for security issues” or
+          “check this WooCommerce extension for HPOS compatibility,” and let the installed skill pack
+          route the review toward the right domain.
+        </p>
+
+        <h2>How do plugin-installed commands work?</h2>
+        <p>
+          When this repository is installed as a Claude Code plugin, commands are namespaced under
+          the plugin name:
+        </p>
+        <pre><code>/wordpress-skills:wp-plugin-review [path]
+/wordpress-skills:wp-sec-review [path]
+/wordpress-skills:wp-woo-review [path]</code></pre>
+
+        <h2>What kinds of developers is this for?</h2>
+        <ul class="feature-list">
+          <li>WordPress plugin developers</li>
+          <li>Agencies maintaining multiple client sites</li>
+          <li>WooCommerce extension teams</li>
+          <li>Headless WordPress teams using WPGraphQL</li>
+          <li>Developers building blocks, themes, admin tools, and migration workflows</li>
+        </ul>
+
+        <h2>What makes this better than a generic AI prompt?</h2>
+        <p>
+          Generic prompts tend to miss WordPress-specific pitfalls. This pack encodes reusable domain
+          guidance so reviews are more opinionated, more consistent, and more useful on real
+          WordPress codebases.
+        </p>
+
+        <h2>Where should I start?</h2>
+        <ul>
+          <li>Homepage: <a href="../index.html">WordPress Skills</a></li>
+          <li>Plugin review guide: <a href="./review-wordpress-plugin-with-claude-code.html">How to review a WordPress plugin with Claude Code</a></li>
+          <li>Repository: <a href="https://github.com/jorgerosal/wordpress-skills">GitHub repo</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>WordPress Skills for Claude Code and Codex.</p>
+      <a href="../index.html">Back to homepage</a>
+    </div>
+  </footer>
+</body>
+</html>

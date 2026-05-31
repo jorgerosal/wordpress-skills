@@ -4,9 +4,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- SEO/GEO-oriented docs pages for search and AI discovery:
+  - `docs/guides/review-wordpress-plugin-with-claude-code.html`
+  - `docs/guides/wordpress-ai-code-review-faq.html`
+- `docs/robots.txt` and `docs/sitemap.xml` for GitHub Pages indexing
+
 ### Changed
 
-- Added planned roadmap entries for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review` to the README skills table with in-progress status markers
+- Strengthened GitHub Pages metadata with canonical, Open Graph, Twitter, and structured-data tags
+- Added guide links and example-output framing to improve README discoverability and conversion for search visitors
+
+### Fixed
+
+- Added a Claude Code plugin manifest at `.claude-plugin/plugin.json` so the repository can be recognized as an installable plugin instead of only a loose file tree
 - Clarified README skill status labels so shipped and in-progress skill entries are easier to distinguish
 - Added initial Claude and Codex skill scaffolds for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review`, plus shared reference docs and six new slash commands
 - Expanded README command coverage to include the new ops, Playground, and PHPStan command pairs

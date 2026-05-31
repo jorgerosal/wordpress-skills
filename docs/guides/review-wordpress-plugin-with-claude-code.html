@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Review a WordPress Plugin with Claude Code | WordPress Skills</title>
+  <meta name="description" content="A practical guide to reviewing a WordPress plugin with Claude Code using structured WordPress skills for security, performance, architecture, WooCommerce, REST API, and release-readiness checks." />
+  <link rel="canonical" href="https://jorgerosal.github.io/wordpress-skills/guides/review-wordpress-plugin-with-claude-code.html" />
+  <meta property="og:title" content="How to Review a WordPress Plugin with Claude Code" />
+  <meta property="og:description" content="Use WordPress Skills to review plugins for security, performance, architecture, REST API design, WooCommerce compatibility, and release risk." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jorgerosal.github.io/wordpress-skills/guides/review-wordpress-plugin-with-claude-code.html" />
+  <meta property="og:image" content="https://jorgerosal.github.io/wordpress-skills/assets/hero-wordpress-skills.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "How to Review a WordPress Plugin with Claude Code",
+    "description": "A practical guide to reviewing a WordPress plugin with Claude Code using structured WordPress review skills.",
+    "url": "https://jorgerosal.github.io/wordpress-skills/guides/review-wordpress-plugin-with-claude-code.html",
+    "author": {
+      "@type": "Person",
+      "name": "Jorge Rosal"
+    },
+    "about": [
+      "WordPress plugin review",
+      "Claude Code",
+      "WordPress security review",
+      "WordPress performance review"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" aria-label="WordPress Skills home">
+        <span class="brand-mark"><span>W</span></span>
+        <span class="brand-copy"><strong>WordPress Skills</strong><span>for Claude and Codex</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#installation">Install</a>
+        <a href="../index.html#commands">Commands</a>
+        <a href="./wordpress-ai-code-review-faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="band">
+      <div class="shell" style="max-width: 860px;">
+        <p class="eyebrow">Guide</p>
+        <h1>How to review a WordPress plugin with Claude Code</h1>
+        <p>
+          If you want Claude Code to give you more than generic PHP advice, you need a review flow
+          that understands WordPress plugin architecture, hooks, Settings API patterns, REST routes,
+          admin screens, data migrations, and release risk. This guide shows how to use the
+          <strong>WordPress Skills</strong> pack for a practical plugin review.
+        </p>
+
+        <h2>What this workflow is good for</h2>
+        <ul class="feature-list">
+          <li>Pre-release plugin reviews</li>
+          <li>Security and performance triage before a client handoff</li>
+          <li>Architecture review for a plugin that has grown messy over time</li>
+          <li>WooCommerce, REST API, admin UI, or migration-specific audits</li>
+        </ul>
+
+        <h2>Step 1: Install the WordPress plugin pack</h2>
+        <pre><code>git submodule add https://github.com/jorgerosal/wordpress-skills.git .claude/plugins/wordpress-skills
+
+git commit -m "Add WordPress Claude skills"</code></pre>
+        <p>
+          Once installed as a Claude Code plugin, the commands are namespaced. That means the
+          full review command looks like this:
+        </p>
+        <pre><code>/wordpress-skills:wp-plugin-review wp-content/plugins/my-plugin</code></pre>
+
+        <h2>Step 2: Start with the right review command</h2>
+        <p>Use the full review command when you want architecture and fix guidance, or the fast scan when you need triage.</p>
+        <ul>
+          <li><code>/wordpress-skills:wp-plugin-review [path]</code> — full plugin review</li>
+          <li><code>/wordpress-skills:wp-plugin [path]</code> — quick plugin triage</li>
+          <li><code>/wordpress-skills:wp-sec-review [path]</code> — deep security review</li>
+          <li><code>/wordpress-skills:wp-perf-review [path]</code> — deep performance review</li>
+        </ul>
+
+        <h2>Step 3: Ask in natural language when that fits your workflow</h2>
+        <pre><code>Review this WordPress plugin for security and architecture issues
+Check this plugin release for migration risk
+Audit this WooCommerce extension for HPOS compatibility
+Review this plugin settings page and admin notices</code></pre>
+        <p>
+          The pack is structured so Claude Code can map these requests to the right domain instead of
+          flattening everything into a single vague checklist.
+        </p>
+
+        <h2>What a strong plugin review should cover</h2>
+        <h3>Architecture</h3>
+        <ul>
+          <li>Plugin bootstrap layout and autoloading</li>
+          <li>Activation, deactivation, and uninstall behavior</li>
+          <li>Hook organization and side-effect boundaries</li>
+          <li>Settings API and admin screen structure</li>
+        </ul>
+
+        <h3>Security</h3>
+        <ul>
+          <li>Escaping, sanitization, and validation gaps</li>
+          <li>Nonce verification and capability checks</li>
+          <li>SQL query safety and upload handling</li>
+          <li>REST API permission callback quality</li>
+        </ul>
+
+        <h3>Performance</h3>
+        <ul>
+          <li>Heavy queries, N+1 patterns, and page-load writes</li>
+          <li>Cron or Action Scheduler misuse</li>
+          <li>Admin-only logic leaking into frontend requests</li>
+          <li>Asset loading and cache strategy issues</li>
+        </ul>
+
+        <h3>Release readiness</h3>
+        <ul>
+          <li>Schema changes and backfill safety</li>
+          <li>Rollback risk</li>
+          <li>WordPress.org standards and packaging issues</li>
+          <li>Testing gaps before shipping</li>
+        </ul>
+
+        <h2>Example output shape</h2>
+        <pre><code>Critical — Missing capability check before plugin settings save
+- File: includes/admin/class-settings-page.php:88
+- Why it matters: authenticated low-privilege users may be able to change plugin behavior
+- Fix: gate the handler with current_user_can(...) before processing input
+
+Warning — Expensive meta query inside frontend request loop
+- File: includes/class-catalog.php:214
+- Why it matters: high-cardinality postmeta lookups can slow product/category pages
+- Fix: reduce per-request queries, cache IDs, or redesign the data model</code></pre>
+
+        <h2>Related commands to branch into</h2>
+        <ul>
+          <li>Use <code>/wordpress-skills:wp-woo-review</code> for WooCommerce-specific extensions</li>
+          <li>Use <code>/wordpress-skills:wp-rest-review</code> for custom REST controllers and routes</li>
+          <li>Use <code>/wordpress-skills:wp-migration-review</code> when versioned upgrades are risky</li>
+          <li>Use <code>/wordpress-skills:wp-test-review</code> to turn findings into a test plan</li>
+        </ul>
+
+        <h2>Why this page exists</h2>
+        <p>
+          Developers search for very specific workflows like <em>how to review a WordPress plugin with Claude Code</em>,
+          <em>WordPress plugin security review</em>, or <em>AI WordPress code review checklist</em>. This page is meant to be a
+          direct, example-driven landing page for that intent.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>WordPress Skills for Claude Code and Codex.</p>
+      <a href="../index.html">Back to homepage</a>
+    </div>
+  </footer>
+</body>
+</html>

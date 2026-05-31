@@ -3,11 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claude Skills and Codex Skills for Wordpress Development</title>
+  <title>WordPress Skills for Claude Code and Codex | AI WordPress Code Review</title>
   <meta
     name="description"
-    content="GitHub Pages site for the WordPress skill pack for Claude Code and Codex, covering 14 review domains and 28 Claude slash commands."
+    content="WordPress skills for Claude Code and Codex covering plugin review, security audits, WooCommerce, WPGraphQL, performance, WP-CLI, migrations, release engineering, and AI-assisted WordPress code review."
   />
+  <link rel="canonical" href="https://jorgerosal.github.io/wordpress-skills/" />
+  <meta property="og:title" content="WordPress Skills for Claude Code and Codex" />
+  <meta property="og:description" content="AI-assisted WordPress code review skills for plugin development, WooCommerce, WPGraphQL, security, performance, testing, and release engineering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jorgerosal.github.io/wordpress-skills/" />
+  <meta property="og:image" content="https://jorgerosal.github.io/wordpress-skills/assets/hero-wordpress-skills.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "WordPress Skills",
+    "codeRepository": "https://github.com/jorgerosal/wordpress-skills",
+    "url": "https://jorgerosal.github.io/wordpress-skills/",
+    "description": "WordPress skills for Claude Code and Codex covering plugin review, WooCommerce, WPGraphQL, performance, security, and release engineering.",
+    "programmingLanguage": ["PHP", "JavaScript", "HTML", "CSS"],
+    "keywords": ["WordPress", "Claude Code", "Codex", "AI code review", "WooCommerce", "WPGraphQL"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -37,6 +56,7 @@
         <a href="#skills">Skills</a>
         <a href="#installation">Install</a>
         <a href="#commands">Commands</a>
+        <a href="#guides">Guides</a>
         <a href="#coverage">Coverage</a>
       </nav>
 
@@ -70,12 +90,13 @@
       />
       <div class="hero-overlay"></div>
       <div class="shell hero-content">
-        <p class="eyebrow">14 review domains • 28 Claude commands • Parallel Codex wrappers</p>
-        <h1>WordPress skills for code review, fast triage, and cleaner installs.</h1>
+        <p class="eyebrow">WordPress plugin review • WooCommerce audits • WPGraphQL checks • 28 Claude commands</p>
+        <h1>WordPress skills for Claude Code and Codex.</h1>
         <p class="hero-copy">
-          A developer-focused skill pack for Claude Code and Codex across performance,
-          security, plugins, blocks, themes, WooCommerce, REST APIs, admin UI,
-          migrations, accessibility, testing, WP-CLI ops, Playground, and PHPStan.
+          AI-assisted WordPress code review skills for plugin development, security audits,
+          performance triage, WooCommerce extensions, REST APIs, admin UI, migrations,
+          accessibility, testing, headless WordPress, WPGraphQL, WP-CLI, Playground,
+          and release engineering.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#installation">Install the Pack</a>
@@ -115,6 +136,29 @@
           <li>Shared references between Claude and Codex</li>
           <li>Installation paths for project, user, and single-skill use</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="band" id="guides">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Guides</p>
+          <h2>Search-friendly landing pages for real WordPress workflows.</h2>
+          <p>
+            These pages are written for practical developer intent: how to review a WordPress plugin,
+            how AI-assisted WordPress code review works, and which commands to start with.
+          </p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3><a href="./guides/review-wordpress-plugin-with-claude-code.html">How to review a WordPress plugin with Claude Code</a></h3>
+            <p>Step-by-step guide for plugin architecture, security, performance, release readiness, and related command handoffs.</p>
+          </article>
+          <article class="skill-card">
+            <h3><a href="./guides/wordpress-ai-code-review-faq.html">WordPress AI code review FAQ</a></h3>
+            <p>FAQ page for Claude Code, Codex, WooCommerce, WPGraphQL, installation, and common WordPress review use cases.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -286,7 +330,9 @@ What tests should I add for this change?</code></pre>
         <div>
           <p class="eyebrow">Repository Layout</p>
           <h2>Parallel wrappers, shared references, one source of domain truth.</h2>
-          <pre class="repo-tree"><code>claude-skills/   # Claude-oriented skill pack with shared reference docs
+          <pre class="repo-tree"><code>.claude-plugin/  # Claude Code plugin manifest
+claude-skills/   # Claude-oriented skill pack with shared reference docs
+skills/          # Plugin-compatible alias to the Claude skill tree
 codex-skills/    # Codex-oriented skill wrappers for the same fourteen domains
 commands/        # Claude slash commands
 public/          # README assets
@@ -296,6 +342,8 @@ docs/            # GitHub Pages site</code></pre>
           <a href="https://github.com/jorgerosal/wordpress-skills/blob/main/README.md" target="_blank" rel="noreferrer">README</a>
           <a href="https://github.com/jorgerosal/wordpress-skills/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer">Contributing</a>
           <a href="https://github.com/jorgerosal/wordpress-skills/blob/main/CHANGELOG.md" target="_blank" rel="noreferrer">Changelog</a>
+          <a href="./guides/review-wordpress-plugin-with-claude-code.html">Plugin Review Guide</a>
+          <a href="./guides/wordpress-ai-code-review-faq.html">FAQ</a>
           <a href="https://github.com/jorgerosal/wordpress-skills" target="_blank" rel="noreferrer">Repository</a>
         </div>
       </div>

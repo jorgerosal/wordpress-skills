@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jorgerosal.github.io/wordpress-skills/sitemap.xml
