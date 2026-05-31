@@ -4,9 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Workflow-specific docs pages for discoverability and developer intent:
+  - `docs/guides/review-woocommerce-extension-with-claude-code.html`
+  - `docs/guides/wordpress-release-engineering-checklist.html`
+- `docs/llms.txt` as an AI-readable index of the project, key pages, common tasks, and starter commands
+
 ### Changed
 
 - Added planned roadmap entries for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review` to the README skills table with in-progress status markers
+- Added guide links to the README and GitHub Pages homepage so workflow pages are easier to discover
 - Clarified README skill status labels so shipped and in-progress skill entries are easier to distinguish
 - Added initial Claude and Codex skill scaffolds for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review`, plus shared reference docs and six new slash commands
 - Expanded README command coverage to include the new ops, Playground, and PHPStan command pairs

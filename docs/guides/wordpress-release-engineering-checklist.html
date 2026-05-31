@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WordPress Release Engineering Checklist for Claude Code | WordPress Skills</title>
+  <meta name="description" content="A practical WordPress release engineering checklist for Claude Code covering migrations, WP-CLI operations, PHPStan, testing, rollout risk, rollback planning, and pre-release review commands." />
+  <link rel="canonical" href="https://jorgerosal.github.io/wordpress-skills/guides/wordpress-release-engineering-checklist.html" />
+  <meta property="og:title" content="WordPress Release Engineering Checklist for Claude Code" />
+  <meta property="og:description" content="Use Claude Code and WordPress Skills for migration review, WP-CLI ops review, PHPStan checks, test planning, and safer WordPress releases." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jorgerosal.github.io/wordpress-skills/guides/wordpress-release-engineering-checklist.html" />
+  <meta property="og:image" content="https://jorgerosal.github.io/wordpress-skills/assets/hero-wordpress-skills.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "WordPress Release Engineering Checklist for Claude Code",
+    "description": "A practical pre-release checklist for WordPress teams using Claude Code and the WordPress Skills pack.",
+    "url": "https://jorgerosal.github.io/wordpress-skills/guides/wordpress-release-engineering-checklist.html",
+    "author": {"@type": "Person", "name": "Jorge Rosal"},
+    "about": ["WordPress release engineering", "WP-CLI", "PHPStan", "migration review"]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" aria-label="WordPress Skills home">
+        <span class="brand-mark"><span>W</span></span>
+        <span class="brand-copy"><strong>WordPress Skills</strong><span>for Claude and Codex</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#installation">Install</a>
+        <a href="../index.html#commands">Commands</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="band">
+      <div class="shell" style="max-width: 860px;">
+        <p class="eyebrow">Checklist</p>
+        <h1>WordPress release engineering checklist for Claude Code</h1>
+        <p>
+          Shipping WordPress code safely usually means combining multiple review surfaces: schema and data
+          migrations, WP-CLI operational commands, static analysis, regression planning, and rollout safety.
+          This checklist shows how to combine the existing WordPress Skills commands into a practical release review.
+        </p>
+
+        <h2>Recommended command sequence</h2>
+        <pre><code>/wordpress-skills:wp-migration-review .
+/wordpress-skills:wp-ops-review .
+/wordpress-skills:wp-phpstan-review .
+/wordpress-skills:wp-test-review .</code></pre>
+
+        <h2>Release checklist</h2>
+        <h3>1. Migration safety</h3>
+        <ul>
+          <li>Versioned upgrade routines are idempotent</li>
+          <li><code>dbDelta()</code> usage is constrained and intentional</li>
+          <li>Backfills are batched instead of running in a single risky request</li>
+          <li>Rollback or failure handling is at least understood and documented</li>
+        </ul>
+
+        <h3>2. Operational safety</h3>
+        <ul>
+          <li>WP-CLI commands are explicit about multisite scope</li>
+          <li>Search-replace or destructive operations have guardrails</li>
+          <li>Maintenance workflows can run non-interactively</li>
+          <li>Long-running jobs avoid brittle request-time execution</li>
+        </ul>
+
+        <h3>3. Static analysis and code health</h3>
+        <ul>
+          <li>PHPStan config is valid and scoped sensibly</li>
+          <li>Baselines are not masking new issues without review</li>
+          <li>WordPress-specific stubs or bootstrap assumptions are wired correctly</li>
+        </ul>
+
+        <h3>4. Test coverage before ship</h3>
+        <ul>
+          <li>High-risk flows have at least one regression path</li>
+          <li>REST, admin, checkout, or migration behavior has explicit verification</li>
+          <li>Manual smoke tests are named when automation is missing</li>
+        </ul>
+
+        <h2>Example findings this checklist is meant to catch</h2>
+        <pre><code>Critical — Upgrade routine performs unbounded data backfill during admin request
+- File: includes/upgrades/class-upgrade-210.php:51
+- Why it matters: large sites may time out mid-upgrade and leave partial state
+- Fix: persist upgrade progress and batch work asynchronously
+
+Warning — WP-CLI command defaults to all sites on multisite without confirmation guard
+- File: includes/cli/class-reindex-command.php:109
+- Why it matters: operational blast radius is larger than a caller may expect
+- Fix: require an explicit network flag or targeted site selection</code></pre>
+
+        <h2>Useful natural-language prompts</h2>
+        <pre><code>Review this WordPress release for migration risk
+Check this WP-CLI command for multisite safety
+Audit this phpstan.neon before we tighten CI
+What tests should we add before shipping this plugin update?</code></pre>
+
+        <h2>When to use this page</h2>
+        <p>
+          This guide is a good fit when a team is searching for terms like <em>WordPress release checklist</em>,
+          <em>WordPress migration review</em>, <em>WP-CLI safety review</em>, or <em>PHPStan for WordPress plugins</em> and wants
+          concrete starting commands instead of a generic release blog post.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>WordPress Skills for Claude Code and Codex.</p>
+      <a href="../index.html">Back to homepage</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -47,6 +47,15 @@ Run the repository validator before opening a PR or after adding skills, command
 python3 scripts/validate_repo.py
 ```
 
+## Workflow Guides
+
+The GitHub Pages docs now include workflow-specific landing pages for common WordPress development tasks:
+
+- [How to review a WooCommerce extension with Claude Code](https://jorgerosal.github.io/wordpress-skills/guides/review-woocommerce-extension-with-claude-code.html)
+- [WordPress release engineering checklist for Claude Code](https://jorgerosal.github.io/wordpress-skills/guides/wordpress-release-engineering-checklist.html)
+
+These pages are designed for both human readers and AI/search discovery, with concrete commands, checklists, and example findings.
+
 ## Available Skills
 
 `✅` Available now · `🚧` In progress

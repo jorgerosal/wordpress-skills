@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Review a WooCommerce Extension with Claude Code | WordPress Skills</title>
+  <meta name="description" content="A practical WooCommerce code review guide for Claude Code covering HPOS compatibility, CRUD usage, payment gateways, Action Scheduler, template overrides, cart performance, and release risk." />
+  <link rel="canonical" href="https://jorgerosal.github.io/wordpress-skills/guides/review-woocommerce-extension-with-claude-code.html" />
+  <meta property="og:title" content="How to Review a WooCommerce Extension with Claude Code" />
+  <meta property="og:description" content="Review WooCommerce extensions with WordPress Skills: HPOS, CRUD APIs, gateways, Action Scheduler, cart fragments, and template overrides." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jorgerosal.github.io/wordpress-skills/guides/review-woocommerce-extension-with-claude-code.html" />
+  <meta property="og:image" content="https://jorgerosal.github.io/wordpress-skills/assets/hero-wordpress-skills.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "How to Review a WooCommerce Extension with Claude Code",
+    "description": "A practical WooCommerce extension review guide for Claude Code and the WordPress Skills pack.",
+    "url": "https://jorgerosal.github.io/wordpress-skills/guides/review-woocommerce-extension-with-claude-code.html",
+    "author": {"@type": "Person", "name": "Jorge Rosal"},
+    "about": ["WooCommerce", "HPOS", "Claude Code", "WordPress code review"]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" aria-label="WordPress Skills home">
+        <span class="brand-mark"><span>W</span></span>
+        <span class="brand-copy"><strong>WordPress Skills</strong><span>for Claude and Codex</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#installation">Install</a>
+        <a href="../index.html#commands">Commands</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="band">
+      <div class="shell" style="max-width: 860px;">
+        <p class="eyebrow">Guide</p>
+        <h1>How to review a WooCommerce extension with Claude Code</h1>
+        <p>
+          WooCommerce extensions need more than a generic plugin review. Modern reviews should check
+          <strong>HPOS compatibility</strong>, correct use of WooCommerce CRUD objects, payment gateway
+          flows, Action Scheduler patterns, checkout performance, and whether template overrides preserve hooks.
+        </p>
+
+        <h2>Start with the WooCommerce-specific command</h2>
+        <pre><code>/wordpress-skills:wp-woo-review wp-content/plugins/my-woo-extension</code></pre>
+        <p>
+          Use the fast version when you want triage first:
+        </p>
+        <pre><code>/wordpress-skills:wp-woo wp-content/plugins/my-woo-extension</code></pre>
+
+        <h2>What this review should cover</h2>
+        <h3>1. HPOS compatibility</h3>
+        <ul>
+          <li>Compatibility declaration during <code>before_woocommerce_init</code></li>
+          <li>No direct post or postmeta access for orders</li>
+          <li>Use of WooCommerce CRUD methods instead of legacy order queries</li>
+        </ul>
+
+        <h3>2. Payment and checkout safety</h3>
+        <ul>
+          <li>Nonce and capability handling for admin settings</li>
+          <li>Secure payment gateway callbacks and webhook handling</li>
+          <li>No unsafe assumptions about order state transitions</li>
+        </ul>
+
+        <h3>3. Performance and job execution</h3>
+        <ul>
+          <li>Action Scheduler used for async work instead of misusing WP-Cron</li>
+          <li>No heavy checkout-time queries or remote calls</li>
+          <li>Cart fragments and frontend assets only loaded where needed</li>
+        </ul>
+
+        <h3>4. Template and hook quality</h3>
+        <ul>
+          <li>Template overrides preserve WooCommerce hooks</li>
+          <li>Version tracking on overridden templates</li>
+          <li>Extension behavior stays compatible with blocks and modern checkout flows</li>
+        </ul>
+
+        <h2>Related commands to use during a release review</h2>
+        <ul>
+          <li><code>/wordpress-skills:wp-sec-review</code> for deeper security checks</li>
+          <li><code>/wordpress-skills:wp-perf-review</code> for slow query and request profiling heuristics</li>
+          <li><code>/wordpress-skills:wp-migration-review</code> for schema or upgrade routines</li>
+          <li><code>/wordpress-skills:wp-test-review</code> to turn findings into a WooCommerce regression plan</li>
+        </ul>
+
+        <h2>Example review output</h2>
+        <pre><code>Critical — Direct order post access breaks HPOS compatibility
+- File: includes/class-sync-orders.php:144
+- Why it matters: modern WooCommerce stores can persist orders outside wp_posts
+- Fix: replace direct post queries with WC_Order / wc_get_order / wc_get_orders patterns
+
+Warning — Checkout callback schedules remote sync during request lifecycle
+- File: includes/class-checkout-sync.php:93
+- Why it matters: slow remote calls can degrade checkout completion and retries
+- Fix: enqueue async work through Action Scheduler and persist retry state</code></pre>
+
+        <h2>Good natural-language prompts</h2>
+        <pre><code>Review this WooCommerce extension for HPOS issues
+Check this payment gateway for order lifecycle risks
+Audit this checkout customization for performance problems
+Review these WooCommerce template overrides before release</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>WordPress Skills for Claude Code and Codex.</p>
+      <a href="../index.html">Back to homepage</a>
+    </div>
+  </footer>
+</body>
+</html>

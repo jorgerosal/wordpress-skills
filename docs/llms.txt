@@ -1,0 +1,35 @@
+# WordPress Skills
+
+> WordPress skills for Claude Code and Codex.
+> Focus: plugin review, WooCommerce, security, performance, REST API, migrations, testing, WP-CLI ops, Playground, and PHPStan.
+
+## Primary pages
+- Homepage: https://jorgerosal.github.io/wordpress-skills/
+- Repository: https://github.com/jorgerosal/wordpress-skills
+
+## High-intent workflow guides
+- How to review a WooCommerce extension with Claude Code: https://jorgerosal.github.io/wordpress-skills/guides/review-woocommerce-extension-with-claude-code.html
+- WordPress release engineering checklist for Claude Code: https://jorgerosal.github.io/wordpress-skills/guides/wordpress-release-engineering-checklist.html
+
+## What this repository contains
+- Claude Code plugin skills for WordPress code review
+- Parallel Codex skill wrappers for the same WordPress domains
+- Slash commands for full reviews and quick triage
+- WordPress-specific review heuristics, examples, and reference docs
+
+## Common tasks
+- Review a WordPress plugin for security or performance issues
+- Audit a WooCommerce extension for HPOS compatibility and checkout risk
+- Review REST API permission callbacks and schema handling
+- Check migrations, WP-CLI commands, PHPStan setup, and release readiness
+- Turn findings into a test plan before shipping
+
+## Best starting commands
+- `/wordpress-skills:wp-plugin-review [path]`
+- `/wordpress-skills:wp-woo-review [path]`
+- `/wordpress-skills:wp-sec-review [path]`
+- `/wordpress-skills:wp-perf-review [path]`
+- `/wordpress-skills:wp-migration-review [path]`
+- `/wordpress-skills:wp-ops-review [path]`
+- `/wordpress-skills:wp-phpstan-review [path]`
+- `/wordpress-skills:wp-test-review [path]`
