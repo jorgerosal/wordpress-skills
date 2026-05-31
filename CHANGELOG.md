@@ -4,8 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Search-intent guide pages under `docs/guides/` for:
+  - WooCommerce plugin reviews with Claude Code
+  - WordPress REST API reviews with Claude Code
+- `docs/guides/index.html` as a lightweight guide hub for focused review workflows
+
 ### Changed
 
+- Prepared tighter GitHub repo metadata copy for better marketplace and repository discovery
 - Added planned roadmap entries for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review` to the README skills table with in-progress status markers
 - Clarified README skill status labels so shipped and in-progress skill entries are easier to distinguish
 - Added initial Claude and Codex skill scaffolds for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review`, plus shared reference docs and six new slash commands

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Review a WooCommerce Plugin with Claude Code | WordPress Skills</title>
+  <meta name="description" content="A practical guide to reviewing a WooCommerce plugin with Claude Code, including HPOS, payment gateways, CRUD usage, template overrides, Action Scheduler, and release-risk checks." />
+  <link rel="canonical" href="https://jorgerosal.github.io/wordpress-skills/guides/review-woocommerce-plugin-with-claude-code.html" />
+  <meta property="og:title" content="How to Review a WooCommerce Plugin with Claude Code" />
+  <meta property="og:description" content="Use WordPress Skills to review WooCommerce extensions for HPOS, gateways, CRUD usage, templates, scheduling, and performance risk." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jorgerosal.github.io/wordpress-skills/guides/review-woocommerce-plugin-with-claude-code.html" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "How to Review a WooCommerce Plugin with Claude Code",
+    "description": "A practical guide to reviewing WooCommerce plugins with Claude Code using focused WordPress review skills.",
+    "url": "https://jorgerosal.github.io/wordpress-skills/guides/review-woocommerce-plugin-with-claude-code.html",
+    "author": {
+      "@type": "Person",
+      "name": "Jorge Rosal"
+    },
+    "about": [
+      "WooCommerce plugin review",
+      "Claude Code",
+      "HPOS compatibility",
+      "WordPress skills"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" aria-label="WordPress Skills home">
+        <span class="brand-mark"><span>W</span></span>
+        <span class="brand-copy"><strong>WordPress Skills</strong><span>for Claude and Codex</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="band">
+      <div class="shell" style="max-width: 860px;">
+        <p class="eyebrow">Guide</p>
+        <h1>How to review a WooCommerce plugin with Claude Code</h1>
+        <p>
+          WooCommerce extensions have a different failure surface than generic WordPress plugins.
+          You need to review order storage, payment flows, checkout behavior, templates, scheduled
+          jobs, and performance under catalog or cart load. This guide shows how to use the
+          <strong>wp-woocommerce-dev</strong> skill for a focused review.
+        </p>
+
+        <h2>When to use this workflow</h2>
+        <ul class="feature-list">
+          <li>Pre-release review for a WooCommerce extension</li>
+          <li>HPOS compatibility checks before a store upgrade</li>
+          <li>Payment gateway or checkout customization audits</li>
+          <li>Performance and scheduling checks for high-order-volume stores</li>
+        </ul>
+
+        <h2>Start with the WooCommerce-specific command</h2>
+        <pre><code>/wp-woo-review wp-content/plugins/my-woo-extension</code></pre>
+        <p>Use the faster triage command when you want a narrower first pass:</p>
+        <pre><code>/wp-woo wp-content/plugins/my-woo-extension</code></pre>
+
+        <h2>Natural language prompts that work well</h2>
+        <pre><code>Review this WooCommerce plugin for HPOS compatibility
+Audit this payment gateway extension before release
+Check this checkout customization for performance and hook safety
+Review this WooCommerce extension for Action Scheduler and template override issues</code></pre>
+
+        <h2>What a strong WooCommerce review should cover</h2>
+        <h3>Compatibility and data model</h3>
+        <ul>
+          <li>HPOS compatibility declarations and real usage patterns</li>
+          <li>Correct WooCommerce CRUD usage instead of raw post/meta assumptions</li>
+          <li>Order lifecycle hooks and backwards-compatibility risks</li>
+        </ul>
+
+        <h3>Checkout and payments</h3>
+        <ul>
+          <li>Payment gateway validation and error handling</li>
+          <li>Hook timing around checkout, cart, and order status changes</li>
+          <li>Idempotency and duplicate processing risk</li>
+        </ul>
+
+        <h3>Templates and frontend behavior</h3>
+        <ul>
+          <li>Template overrides that drift from WooCommerce hooks</li>
+          <li>Cart fragments, mini-cart behavior, and unnecessary asset loading</li>
+          <li>Frontend actions that trigger expensive or repeated work</li>
+        </ul>
+
+        <h3>Scheduling and scale</h3>
+        <ul>
+          <li>Action Scheduler usage and retry behavior</li>
+          <li>Background jobs that may pile up under load</li>
+          <li>Query and cache patterns that get expensive on larger catalogs</li>
+        </ul>
+
+        <h2>Example output shape</h2>
+        <pre><code>Critical — Extension reads order data from legacy post meta paths without HPOS-safe abstraction
+- File: includes/class-order-sync.php:143
+- Why it matters: order reads and writes may break or behave inconsistently on HPOS-enabled stores
+- Fix: move to WooCommerce CRUD accessors and verify compatibility declarations match real behavior
+
+Warning — Action Scheduler job can be queued repeatedly without a duplicate guard
+- File: includes/class-renewal-runner.php:77
+- Why it matters: repeated scheduling can create duplicate side effects and queue pressure on busy stores
+- Fix: add a uniqueness guard and review retry behavior for failures</code></pre>
+
+        <h2>Related review commands</h2>
+        <ul>
+          <li><code>/wp-sec-review</code> for deeper security review</li>
+          <li><code>/wp-perf-review</code> for performance-heavy extensions</li>
+          <li><code>/wp-test-review</code> to turn findings into a WooCommerce test plan</li>
+          <li><code>/wp-migration-review</code> when the extension includes schema or data migrations</li>
+        </ul>
+
+        <h2>More guides</h2>
+        <ul>
+          <li><a href="./review-wordpress-rest-api-with-claude-code.html">How to review a WordPress REST API with Claude Code</a></li>
+          <li><a href="./index.html">All WordPress review guides</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>WordPress Skills for Claude Code and Codex.</p>
+      <a href="./index.html">Back to guides</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Review a WordPress REST API with Claude Code | WordPress Skills</title>
+  <meta name="description" content="A practical guide to reviewing a WordPress REST API with Claude Code, including custom routes, permission callbacks, validation, response shape, versioning, and headless WordPress API concerns." />
+  <link rel="canonical" href="https://jorgerosal.github.io/wordpress-skills/guides/review-wordpress-rest-api-with-claude-code.html" />
+  <meta property="og:title" content="How to Review a WordPress REST API with Claude Code" />
+  <meta property="og:description" content="Use WordPress Skills to review WordPress REST APIs for route design, auth, validation, schema quality, and headless WordPress integration risk." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jorgerosal.github.io/wordpress-skills/guides/review-wordpress-rest-api-with-claude-code.html" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "How to Review a WordPress REST API with Claude Code",
+    "description": "A practical guide to reviewing WordPress REST APIs with Claude Code using focused WordPress review skills.",
+    "url": "https://jorgerosal.github.io/wordpress-skills/guides/review-wordpress-rest-api-with-claude-code.html",
+    "author": {
+      "@type": "Person",
+      "name": "Jorge Rosal"
+    },
+    "about": [
+      "WordPress REST API review",
+      "Claude Code",
+      "headless WordPress",
+      "permission_callback"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" aria-label="WordPress Skills home">
+        <span class="brand-mark"><span>W</span></span>
+        <span class="brand-copy"><strong>WordPress Skills</strong><span>for Claude and Codex</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="band">
+      <div class="shell" style="max-width: 860px;">
+        <p class="eyebrow">Guide</p>
+        <h1>How to review a WordPress REST API with Claude Code</h1>
+        <p>
+          A lot of WordPress API bugs hide in permission callbacks, argument validation, schema
+          drift, and route versioning decisions. If the project powers a headless frontend, a mobile
+          app, or custom admin tooling, those issues get expensive fast. This guide shows how to use
+          the <strong>wp-rest-api-development</strong> skill for a more precise REST API review.
+        </p>
+
+        <h2>When this review matters most</h2>
+        <ul class="feature-list">
+          <li>Custom route registration in plugins or themes</li>
+          <li>Headless WordPress projects with Next.js, Astro, or mobile clients</li>
+          <li>Authenticated admin or editor workflows built on REST endpoints</li>
+          <li>Plugin releases that add or change API behavior</li>
+        </ul>
+
+        <h2>Start with the REST review command</h2>
+        <pre><code>/wp-rest-review wp-content/plugins/my-api-plugin</code></pre>
+        <p>Use the faster scan when you want to triage first:</p>
+        <pre><code>/wp-rest wp-content/plugins/my-api-plugin</code></pre>
+
+        <h2>Natural language prompts that work well</h2>
+        <pre><code>Review these custom WordPress REST routes
+Check this permission_callback logic for security issues
+Audit this headless WordPress API before launch
+Review this plugin API schema and request validation</code></pre>
+
+        <h2>What a strong REST API review should cover</h2>
+        <h3>Routes and permissions</h3>
+        <ul>
+          <li>Route naming and namespace hygiene</li>
+          <li><code>permission_callback</code> quality and capability boundaries</li>
+          <li>Anonymous access that is broader than intended</li>
+        </ul>
+
+        <h3>Validation and sanitization</h3>
+        <ul>
+          <li>Request arg definitions and defaults</li>
+          <li>Validation callbacks that actually reject bad input</li>
+          <li>Sanitization that matches the storage and response model</li>
+        </ul>
+
+        <h3>Response design</h3>
+        <ul>
+          <li>Stable response shape and error structure</li>
+          <li>Correct status codes for failures and edge cases</li>
+          <li>Schema quality for clients that rely on predictable fields</li>
+        </ul>
+
+        <h3>Headless WordPress concerns</h3>
+        <ul>
+          <li>Preview and draft-access flows</li>
+          <li>Caching behavior and invalidation assumptions</li>
+          <li>Versioning strategy for frontend clients that ship independently</li>
+        </ul>
+
+        <h2>Example output shape</h2>
+        <pre><code>Critical — permission_callback returns true for a write route that updates post meta
+- File: includes/rest/class-settings-controller.php:58
+- Why it matters: authenticated users without the intended capability boundary may be able to mutate content or settings
+- Fix: gate the route with a capability-aware callback and verify object-level authorization rules
+
+Warning — Route accepts unsanitized query args and returns unstable field shapes
+- File: includes/rest/class-catalog-controller.php:117
+- Why it matters: client assumptions become brittle and invalid input can leak into query construction
+- Fix: define args with validation/sanitization callbacks and normalize the response schema</code></pre>
+
+        <h2>Related review commands</h2>
+        <ul>
+          <li><code>/wp-sec-review</code> for deeper auth and data-exposure review</li>
+          <li><code>/wp-plugin-review</code> for broader plugin architecture checks</li>
+          <li><code>/wp-test-review</code> to build API integration and regression tests</li>
+          <li><code>/wp-perf-review</code> when the API powers expensive catalog or search flows</li>
+        </ul>
+
+        <h2>More guides</h2>
+        <ul>
+          <li><a href="./review-woocommerce-plugin-with-claude-code.html">How to review a WooCommerce plugin with Claude Code</a></li>
+          <li><a href="./index.html">All WordPress review guides</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>WordPress Skills for Claude Code and Codex.</p>
+      <a href="./index.html">Back to guides</a>
+    </div>
+  </footer>
+</body>
+</html>
