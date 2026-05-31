@@ -4,12 +4,12 @@ const installs = {
     meta:
       "Best for shared repos, client work, and teams. This keeps the skill pack versioned with the project and gives everyone the same install path.",
     code: `# In your project root
-git submodule add https://github.com/jorgerosal/wordpress-skills.git .claude/plugins/wordpress
+git submodule add https://github.com/jorgerosal/wordpress-skills.git .claude/plugins/wordpress-skills
 git commit -m "Add WordPress Claude skills"
 
 # Later updates
-git submodule update --remote .claude/plugins/wordpress
-git add .claude/plugins/wordpress
+git submodule update --remote .claude/plugins/wordpress-skills
+git add .claude/plugins/wordpress-skills
 git commit -m "Update WordPress Claude skills"`,
     demo: (demo) => {
       demo
@@ -33,7 +33,7 @@ git commit -m "Update WordPress Claude skills"`,
           id: "project"
         })
         .command(
-          "git submodule add https://github.com/jorgerosal/wordpress-skills.git .claude/plugins/wordpress",
+          "git submodule add https://github.com/jorgerosal/wordpress-skills.git .claude/plugins/wordpress-skills",
           { id: "project", onCompleteDelay: 400 }
         )
         .respond("Adding the skill pack to this repository...", {
@@ -55,10 +55,10 @@ git commit -m "Update WordPress Claude skills"`,
     title: "Claude user install",
     meta:
       "Best when you want the pack available across multiple projects on one machine without touching each repo separately.",
-    code: `git clone https://github.com/jorgerosal/wordpress-skills.git ~/.claude/plugins/wordpress
+    code: `git clone https://github.com/jorgerosal/wordpress-skills.git ~/.claude/plugins/wordpress-skills
 
 # Later updates
-cd ~/.claude/plugins/wordpress
+cd ~/.claude/plugins/wordpress-skills
 git pull`,
     demo: (demo) => {
       demo
@@ -69,14 +69,14 @@ git pull`,
           id: "user"
         })
         .command(
-          "git clone https://github.com/jorgerosal/wordpress-skills.git ~/.claude/plugins/wordpress",
+          "git clone https://github.com/jorgerosal/wordpress-skills.git ~/.claude/plugins/wordpress-skills",
           { id: "user", onCompleteDelay: 400 }
         )
         .respond("Cloning the pack for machine-wide usage...", {
           id: "user",
           onCompleteDelay: 900
         })
-        .command("cd ~/.claude/plugins/wordpress && git pull", {
+        .command("cd ~/.claude/plugins/wordpress-skills && git pull", {
           id: "user",
           onCompleteDelay: 400
         })

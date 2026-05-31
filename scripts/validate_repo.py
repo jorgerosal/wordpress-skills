@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -68,6 +69,32 @@ def validate_parallel_skill_sets() -> list[str]:
     return claude_skills
 
 
+def validate_claude_plugin_layout(skills: list[str]) -> None:
+    plugin_manifest = ROOT / ".claude-plugin" / "plugin.json"
+    if not plugin_manifest.exists():
+        fail("Missing Claude plugin manifest at .claude-plugin/plugin.json")
+
+    try:
+        manifest = json.loads(plugin_manifest.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        fail(f"Invalid JSON in {plugin_manifest.relative_to(ROOT)}: {exc}")
+        return
+
+    if manifest.get("name") != "wordpress-skills":
+        fail(".claude-plugin/plugin.json should declare plugin name 'wordpress-skills'")
+
+    plugin_skills = ROOT / "skills"
+    if not plugin_skills.exists():
+        fail("Missing Claude plugin skills/ directory or alias at repo root")
+
+    plugin_skill_names = get_skill_names(plugin_skills)
+    if plugin_skill_names != skills:
+        fail(
+            "Claude plugin skills/ tree differs from claude-skills/: "
+            f"skills={plugin_skill_names}, claude-skills={skills}"
+        )
+
+
 def validate_commands() -> list[str]:
     command_files = sorted((ROOT / "commands").glob("*.md"))
     if not command_files:
@@ -121,6 +148,7 @@ def validate_docs(skills: list[str], commands: list[str]) -> None:
 
 def main() -> None:
     skills = validate_parallel_skill_sets()
+    validate_claude_plugin_layout(skills)
     commands = validate_commands()
     validate_reference_dirs(skills)
     validate_docs(skills, commands)

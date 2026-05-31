@@ -102,7 +102,7 @@ Tip:
         id: 'project'
       })
       .command(
-        'git submodule add https://github.com/jorgerosal/wordpress-skills.git .claude/plugins/wordpress',
+        'git submodule add https://github.com/jorgerosal/wordpress-skills.git .claude/plugins/wordpress-skills',
         { id: 'project', onCompleteDelay: 400 }
       )
       .respond('Adding WordPress skills to this project...', {
@@ -124,14 +124,14 @@ Tip:
         id: 'user'
       })
       .command(
-        'git clone https://github.com/jorgerosal/wordpress-skills.git ~/.claude/plugins/wordpress',
+        'git clone https://github.com/jorgerosal/wordpress-skills.git ~/.claude/plugins/wordpress-skills',
         { id: 'user', onCompleteDelay: 400 }
       )
       .respond('Cloning for global machine-wide usage...', {
         id: 'user',
         onCompleteDelay: 800
       })
-      .command('cd ~/.claude/plugins/wordpress && git pull', {
+      .command('cd ~/.claude/plugins/wordpress-skills && git pull', {
         id: 'user',
         onCompleteDelay: 400
       })

@@ -1,0 +1,8 @@
+{
+  "name": "wordpress-skills",
+  "description": "WordPress skills and commands for Claude Code",
+  "version": "2.1.0",
+  "author": {
+    "name": "Jorge Rosal"
+  }
+}

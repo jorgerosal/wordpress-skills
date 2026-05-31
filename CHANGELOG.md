@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+
+- Added a Claude Code plugin manifest at `.claude-plugin/plugin.json` so the repository can be recognized as an installable plugin instead of only a loose file tree
+- Added a plugin-compatible root `skills/` alias that exposes the existing Claude skill pack at the conventional Claude Code plugin path
+- Corrected Claude plugin install and verification docs to use the plugin namespace (`/wordpress-skills:...`) and consistent `wordpress-skills` install paths
+
 ### Changed
+
+- Extended `scripts/validate_repo.py` to verify the Claude plugin manifest and root `skills/` layout so plugin packaging regressions are caught in CI
 
 - Added planned roadmap entries for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review` to the README skills table with in-progress status markers
 - Clarified README skill status labels so shipped and in-progress skill entries are easier to distinguish

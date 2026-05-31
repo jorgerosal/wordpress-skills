@@ -28,7 +28,9 @@ Professional WordPress skills for [Claude Code](https://claude.ai/code) and Code
 ## Repository Layout
 
 ```text
-claude-skills/   # Claude-oriented skill pack with shared reference docs
+.claude-plugin/  # Claude Code plugin manifest
+claude-skills/   # Canonical Claude-oriented skill pack with shared reference docs
+skills/          # Claude Code plugin-compatible alias to claude-skills/
 codex-skills/    # Codex-oriented skill wrappers for the same fourteen domains
 commands/        # Claude slash commands
 public/          # README assets
@@ -86,15 +88,15 @@ Best for shared projects, client work, and teams.
 
 ```bash
 # In your project root
-git submodule add https://github.com/jorgerosal/wordpress-skills.git .claude/plugins/wordpress
+git submodule add https://github.com/jorgerosal/wordpress-skills.git .claude/plugins/wordpress-skills
 git commit -m "Add WordPress Claude skills"
 ```
 
 To update later:
 
 ```bash
-git submodule update --remote .claude/plugins/wordpress
-git add .claude/plugins/wordpress
+git submodule update --remote .claude/plugins/wordpress-skills
+git add .claude/plugins/wordpress-skills
 git commit -m "Update WordPress Claude skills"
 ```
 
@@ -103,13 +105,13 @@ git commit -m "Update WordPress Claude skills"
 Best for solo usage across multiple projects.
 
 ```bash
-git clone https://github.com/jorgerosal/wordpress-skills.git ~/.claude/plugins/wordpress
+git clone https://github.com/jorgerosal/wordpress-skills.git ~/.claude/plugins/wordpress-skills
 ```
 
 To update later:
 
 ```bash
-cd ~/.claude/plugins/wordpress
+cd ~/.claude/plugins/wordpress-skills
 git pull
 ```
 
@@ -130,11 +132,13 @@ After installing:
 
 1. Restart Claude Code if needed
 2. Open a WordPress project
-3. Run a command such as:
+3. Run a namespaced plugin command such as:
 
 ```bash
-/wp-perf-review
+/wordpress-skills:wp-perf-review
 ```
+
+The plugin install paths above use Claude Code's plugin loader, so commands are namespaced with the plugin name (`wordpress-skills`). If you manually copy a skill into `~/.claude/skills/`, the command stays unnamespaced.
 
 ### Codex
 
@@ -236,7 +240,7 @@ Claude skills include a full review command and a faster triage command.
 /wp-phpstan-review .
 ```
 
-When installed from the marketplace, commands are namespaced:
+When installed as a Claude Code plugin or from the marketplace, commands are namespaced:
 
 ```bash
 /wordpress-skills:wp-perf-review [path]
