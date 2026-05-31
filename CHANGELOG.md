@@ -4,8 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- **wp-ci-cd-and-release-engineering** skill with parallel Claude and Codex wrappers, shared reference docs, and slash commands (`/wp-release-review`, `/wp-release`)
+
 ### Changed
 
+- Expanded the repository from 14 to 15 WordPress skill domains and from 28 to 30 Claude slash commands
+- Updated README coverage text, skills table, command listing, and examples for the new CI/CD and release engineering review domain
 - Added planned roadmap entries for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review` to the README skills table with in-progress status markers
 - Clarified README skill status labels so shipped and in-progress skill entries are easier to distinguish
 - Added initial Claude and Codex skill scaffolds for `wp-wpcli-and-ops`, `wp-playground-development`, and `wp-phpstan-review`, plus shared reference docs and six new slash commands
