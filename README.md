@@ -9,12 +9,12 @@
     <img src="https://img.shields.io/badge/Claude%20Code-Ready-1f6feb?style=for-the-badge" alt="Claude Code Ready" />
   </a>
   <img src="https://img.shields.io/badge/Codex-Parallel%20skills-0a7ea4?style=for-the-badge" alt="Codex parallel skills" />
-  <img src="https://img.shields.io/badge/WordPress-14%20review%20domains-21759b?style=for-the-badge&logo=wordpress&logoColor=white" alt="WordPress review domains" />
-  <img src="https://img.shields.io/badge/Commands-28%20slash%20commands-2da44e?style=for-the-badge" alt="28 slash commands" />
+  <img src="https://img.shields.io/badge/WordPress-15%20review%20domains-21759b?style=for-the-badge&logo=wordpress&logoColor=white" alt="WordPress review domains" />
+  <img src="https://img.shields.io/badge/Commands-30%20slash%20commands-2da44e?style=for-the-badge" alt="30 slash commands" />
   <img src="https://img.shields.io/badge/Focus-Code%20review%20and%20triage-8250df?style=for-the-badge" alt="Code review and triage" />
 </p>
 
-Professional WordPress skills for [Claude Code](https://claude.ai/code) and Codex, built for code review, fast triage, and modern WordPress development workflows across performance, security, plugins, blocks, themes, WooCommerce, REST APIs, admin UI, migrations, accessibility, testing, WP-CLI operations, Playground, and PHPStan.
+Professional WordPress skills for [Claude Code](https://claude.ai/code) and Codex, built for code review, fast triage, and modern WordPress development workflows across performance, security, plugins, headless WPGraphQL, blocks, themes, WooCommerce, REST APIs, admin UI, migrations, accessibility, testing, WP-CLI operations, Playground, and PHPStan.
 
 ## Why This Pack
 
@@ -29,7 +29,7 @@ Professional WordPress skills for [Claude Code](https://claude.ai/code) and Code
 
 ```text
 claude-skills/   # Claude-oriented skill pack with shared reference docs
-codex-skills/    # Codex-oriented skill wrappers for the same fourteen domains
+codex-skills/    # Codex-oriented skill wrappers for the same fifteen domains
 commands/        # Claude slash commands
 public/          # README assets
 docs/            # GitHub Pages single-page site
@@ -56,6 +56,7 @@ python3 scripts/validate_repo.py
 | **wp-performance-review** | Performance bottlenecks, query patterns, caching, cron, asset loading | ✅ |
 | **wp-security-review** | XSS, SQL injection, CSRF, auth checks, file upload risks | ✅ |
 | **wp-plugin-development** | Plugin structure, lifecycle hooks, Settings API, i18n, WordPress.org standards | ✅ |
+| **wp-headless-and-wpgraphql** | WPGraphQL schema design, preview/auth flows, resolver performance, caching, and frontend revalidation | ✅ |
 | **wp-block-development** | `block.json`, React/JSX editor patterns, render callbacks, Interactivity API | ✅ |
 | **wp-theme-development** | `theme.json`, templates, template parts, style variations, FSE patterns | ✅ |
 | **wp-woocommerce-dev** | HPOS, CRUD APIs, payment gateway patterns, cart fragments, template overrides | ✅ |
@@ -179,6 +180,8 @@ Claude skills include a full review command and a faster triage command.
 | `/wp-sec [path]` | Fast security scan for common high-risk issues |
 | `/wp-plugin-review [path]` | Full plugin architecture and standards review |
 | `/wp-plugin [path]` | Fast plugin structure and standards scan |
+| `/wp-headless-review [path]` | Full headless WordPress and WPGraphQL review for schema, preview/auth, and cache/build workflows |
+| `/wp-headless [path]` | Fast headless/WPGraphQL scan for schema and preview/cache risks |
 | `/wp-block-review [path]` | Full Gutenberg block review across PHP and JS/JSX |
 | `/wp-block [path]` | Fast block API and `block.json` scan |
 | `/wp-theme-review [path]` | Full block or classic theme review |
@@ -210,6 +213,9 @@ Claude skills include a full review command and a faster triage command.
 
 # Run a fast security scan on a plugin
 /wp-sec wp-content/plugins/my-plugin
+
+# Review a headless WPGraphQL stack
+/wp-headless-review apps/web
 
 # Review a custom block package
 /wp-block-review wp-content/plugins/my-blocks
