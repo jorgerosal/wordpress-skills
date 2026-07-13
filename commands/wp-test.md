@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress test strategy scan - fast coverage discovery for tests, risky surfaces, and likely test gaps
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-test-strategy** skill to perform a quick testing-strategy check.

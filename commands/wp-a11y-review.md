@@ -1,6 +1,6 @@
 ---
 description: WordPress accessibility review - checks semantic HTML, keyboard behavior, focus management, form labeling, and accessible interaction patterns
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-accessibility-review** skill to perform a comprehensive WordPress accessibility review.

@@ -1,6 +1,6 @@
 ---
 description: WordPress REST API review - validates route registration, permission callbacks, request args, schema handling, and response design
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-rest-api-development** skill to perform a comprehensive WordPress REST API review.

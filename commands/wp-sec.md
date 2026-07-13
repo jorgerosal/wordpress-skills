@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress security scan - fast triage using high-risk pattern detection
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-security-review** skill to perform a quick security triage scan.

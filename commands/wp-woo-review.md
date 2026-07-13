@@ -1,6 +1,6 @@
 ---
 description: WooCommerce development review - validates HPOS compatibility, payment gateway security, WooCommerce CRUD patterns, hook usage, template override quality, cart fragments performance, and Action Scheduler patterns for WC 8.2+
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-woocommerce-dev** skill to perform a comprehensive WooCommerce development review.

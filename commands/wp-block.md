@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress block scan - fast pattern detection for block.json issues, missing useBlockProps, deprecated APIs, and render callback problems across PHP and JS/JSX files
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-block-development** skill to perform a quick block development check.

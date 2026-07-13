@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress performance scan - fast triage using critical pattern detection
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-performance-review** skill to perform a quick triage scan.

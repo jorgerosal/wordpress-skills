@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress migration scan - fast pattern detection for version guards, schema changes, dbDelta use, and risky backfills
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-migration-upgrade-review** skill to perform a quick migration check.

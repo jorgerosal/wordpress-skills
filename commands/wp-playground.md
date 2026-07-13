@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress Playground scan - fast pattern detection for Blueprints, Playground CLI setup, embeds, and zero-setup repro issues
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-playground-development** skill to perform a quick WordPress Playground check.

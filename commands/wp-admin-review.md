@@ -1,6 +1,6 @@
 ---
 description: WordPress admin UI review - validates admin pages, settings screens, notices, capability checks, screen targeting, and admin asset loading
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-admin-ui-development** skill to perform a comprehensive WordPress admin UI review.

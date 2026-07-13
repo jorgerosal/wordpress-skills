@@ -1,6 +1,6 @@
 ---
 description: WordPress migration and upgrade review - validates versioned upgrades, schema changes, dbDelta usage, backfills, and rollout safety
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-migration-upgrade-review** skill to perform a comprehensive WordPress migration and upgrade review.

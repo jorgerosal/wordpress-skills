@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress admin UI scan - fast pattern detection for admin menus, settings pages, notices, and screen-specific asset loading
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-admin-ui-development** skill to perform a quick admin UI check.

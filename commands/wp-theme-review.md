@@ -1,6 +1,6 @@
 ---
 description: WordPress theme development review - validates theme.json v3 structure, block theme templates, template parts, global styles, style variations, block patterns, and classic-to-block migration opportunities for WP 6.6+
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-theme-development** skill to perform a comprehensive WordPress theme development review.

@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress theme scan - fast pattern detection for theme.json issues, missing required files, hardcoded styles, and template hierarchy problems across PHP, HTML, and JSON files
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-theme-development** skill to perform a quick theme check.
