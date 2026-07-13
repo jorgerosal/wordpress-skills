@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress accessibility scan - fast pattern detection for semantic, keyboard, focus, ARIA, and form-label issues
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-accessibility-review** skill to perform a quick accessibility check.

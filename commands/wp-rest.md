@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress REST API scan - fast pattern detection for route registration, permission callbacks, raw input handling, and response issues
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-rest-api-development** skill to perform a quick REST API check.

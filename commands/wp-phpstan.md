@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress PHPStan scan - fast pattern detection for phpstan config, baselines, WordPress stubs, and CI analysis issues
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-phpstan-review** skill to perform a quick WordPress PHPStan check.

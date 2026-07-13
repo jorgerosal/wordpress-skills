@@ -1,6 +1,6 @@
 ---
 description: WordPress test strategy review - recommends appropriate unit, integration, and E2E coverage across plugins, themes, blocks, REST APIs, and WooCommerce code
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-test-strategy** skill to perform a comprehensive WordPress test strategy review.

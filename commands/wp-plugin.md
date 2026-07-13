@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress plugin standards check - fast pattern detection for plugin architecture issues
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-plugin-development** skill to perform a quick plugin standards check.

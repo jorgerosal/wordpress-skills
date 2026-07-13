@@ -1,6 +1,6 @@
 ---
 description: WordPress ACF and content modeling review - validates field-group architecture, CPT and taxonomy decisions, repeater/flexible-content fit, ACF JSON sync, and meta-query risks
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-acf-and-content-modeling** skill to perform a comprehensive WordPress ACF and content modeling review.

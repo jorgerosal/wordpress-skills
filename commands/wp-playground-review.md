@@ -1,6 +1,6 @@
 ---
 description: WordPress Playground review - validates Blueprints, Playground CLI usage, embedded demos, and reproducible repro environments
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-playground-development** skill to perform a comprehensive WordPress Playground review.

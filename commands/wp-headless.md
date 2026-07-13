@@ -1,6 +1,6 @@
 ---
 description: Quick headless WordPress scan - fast pattern detection for WPGraphQL schema extensions, frontend queries, preview mode, and revalidation/webhook risk
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-headless-and-wpgraphql** skill to perform a quick headless WordPress check.

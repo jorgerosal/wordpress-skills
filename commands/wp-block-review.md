@@ -1,6 +1,6 @@
 ---
 description: WordPress block development review - validates block.json schema, editor components (React/JSX), server-side rendering, block deprecations, InnerBlocks patterns, and Interactivity API usage for WP 6.5+
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-block-development** skill to perform a comprehensive WordPress block development review.

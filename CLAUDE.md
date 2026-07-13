@@ -157,7 +157,7 @@ Create a markdown file in `commands/` with:
 ```yaml
 ---
 description: What the command does
-argument-hint: [optional-args]
+argument-hint: "[optional-args]"
 ---
 ```
 

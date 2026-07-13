@@ -1,6 +1,6 @@
 ---
 description: WordPress CI/CD and release engineering review - validates pipeline safety, artifact correctness, deploy gating, and rollback readiness
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-ci-cd-and-release-engineering** skill to perform a comprehensive WordPress delivery-pipeline review.

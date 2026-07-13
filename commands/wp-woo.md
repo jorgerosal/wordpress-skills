@@ -1,6 +1,6 @@
 ---
 description: Quick WooCommerce scan - fast pattern detection for HPOS compatibility issues, payment security anti-patterns, cart fragments loading, template override problems, and direct database access
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-woocommerce-dev** skill to perform a quick WooCommerce check.

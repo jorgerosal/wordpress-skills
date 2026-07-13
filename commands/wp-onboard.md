@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress onboarding scan - fast stack detection and triage for an unfamiliar repo or codebase
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-site-audit-and-onboarding** skill to perform a quick onboarding scan.

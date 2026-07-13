@@ -1,6 +1,6 @@
 ---
 description: WordPress PHPStan review - validates phpstan config, baseline discipline, CI wiring, and WordPress-specific static-analysis setup
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-phpstan-review** skill to perform a comprehensive WordPress PHPStan review.

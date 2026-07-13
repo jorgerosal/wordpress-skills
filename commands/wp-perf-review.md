@@ -1,6 +1,6 @@
 ---
 description: WordPress performance code review - detects database anti-patterns, caching issues, hook problems, and scalability concerns
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-performance-review** skill to perform a comprehensive WordPress performance code review.

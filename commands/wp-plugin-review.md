@@ -1,6 +1,6 @@
 ---
 description: WordPress plugin architecture review - validates plugin headers, lifecycle hooks, prefixing, CPT/taxonomies, Settings API, hooks, i18n, and WordPress.org Plugin Check compliance
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-plugin-development** skill to perform a comprehensive WordPress plugin architecture review.

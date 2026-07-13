@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress release scan - fast pattern detection for GitHub Actions, deploy scripts, packaging steps, and release/rollback risk
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-ci-cd-and-release-engineering** skill to perform a quick WordPress release check.

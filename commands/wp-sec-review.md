@@ -1,6 +1,6 @@
 ---
 description: WordPress security code review - detects XSS, SQL injection, CSRF, authorization bypass, file upload vulnerabilities, and dangerous function usage
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-security-review** skill to perform a comprehensive WordPress security code review.

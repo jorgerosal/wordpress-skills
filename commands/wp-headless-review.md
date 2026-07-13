@@ -1,6 +1,6 @@
 ---
 description: Headless WordPress and WPGraphQL review - validates schema design, resolver safety, preview/auth flows, and cache/build invalidation
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-headless-and-wpgraphql** skill to perform a comprehensive headless WordPress review.

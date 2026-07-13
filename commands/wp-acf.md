@@ -1,6 +1,6 @@
 ---
 description: Fast WordPress ACF/content-model scan - checks CPT vs taxonomy vs field choices, field-group hygiene, repeater/flexible-content overuse, JSON drift, and obvious meta-query risk
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use the **wp-acf-and-content-modeling** skill to run a fast first-pass ACF and content modeling scan.

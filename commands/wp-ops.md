@@ -1,6 +1,6 @@
 ---
 description: Quick WordPress ops scan - fast pattern detection for WP-CLI commands, multisite scope, search-replace risk, and maintenance scripts
-argument-hint: [path]
+argument-hint: "[path]"
 ---
 
 Use the **wp-wpcli-and-ops** skill to perform a quick WordPress ops check.

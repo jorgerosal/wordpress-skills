@@ -1,6 +1,6 @@
 ---
 description: Full WordPress site and codebase onboarding review - classifies the stack, maps major surfaces, identifies early risk, and recommends the next specialist review path
-argument-hint: [file-or-directory]
+argument-hint: "[file-or-directory]"
 ---
 
 Use and follow the **wp-site-audit-and-onboarding** skill to perform a comprehensive first-pass WordPress onboarding review.
